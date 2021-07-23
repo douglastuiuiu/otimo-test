@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "de7846cd-9e47-4228-9763-2038d1096796",
+		"name": "otimo_empresas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "empresa - criar matriz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"DHTX Technology\",\n    \"cnpj\": \"01234567000189\",\n    \"tipo\": \"MATRIZ\",\n    \"razaoSocial\": \"DHTX Technology Ltda\",\n    \"contato\": \"Douglas Gomes\",\n    \"email\": \"douglas.gomes@dhtx.com\",\n    \"cep\": \"88131582\",\n    \"estado\": \"SC\",\n    \"bairro\": \"Nova Palhoça\",\n    \"cidade\": \"Palhoça\",\n    \"logradouro\": \"Rua Osmar Rodão Garcia\",\n    \"complemento\": \"Quadra 30, Casa 4, Nº 122\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/empresas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empresa - criar filial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Microsoft\",\n    \"cnpj\": \"98765432000198\",\n    \"tipo\": \"FILIAL\",\n    \"matriz\": 5,\n    \"razaoSocial\": \"Microsoft Ltda\",\n    \"contato\": \"Bill\",\n    \"email\": \"bill.gates@microsoft.com\",\n    \"cep\": \"88130630\",\n    \"estado\": \"SC\",\n    \"bairro\": \"Ponte do Imaruim\",\n    \"cidade\": \"Palhoça\",\n    \"logradouro\": \"Rua Santos Dumont\",\n    \"complemento\": \"Nº 763\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/empresas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empresa - deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/empresas/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empresa - buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/empresas/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empresa - listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Microsoft\",\n    \"cnpj\": \"98765432000198\",\n    \"tipo\": \"FILIAL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/empresas?page=0&size=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "endereco - buscar por cep",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/enderecos/88131582",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"88131582"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
