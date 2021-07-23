@@ -1,0 +1,17 @@
+<h2>Empresas Cadastradas</h2>
+
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>CNPJ</th>
+    <th>Ações</th>
+  </tr>
+  <tr *ngFor="let empresa of empresas">
+    <td>{{empresa.id}}</td>
+    <td>{{empresa.nome}}</td>
+    <td>{{empresa.cnpj}}</td>
+    <td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+  </tr>
+</table>
